@@ -59,3 +59,7 @@ configure :build do
     source: ".tmp/frontend/doc",
     latency: 2
 end
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+end
