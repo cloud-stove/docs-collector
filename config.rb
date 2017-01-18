@@ -51,4 +51,11 @@ configure :build do
     command: "mkdir -p .tmp && cd .tmp && rm -rf backend && git clone --depth 1 #{config[:backend_repo_url]} backend && cd backend && yard --output-dir doc/backend",
     source: ".tmp/backend/doc",
     latency: 2
+  
+  # Pull in front end docs
+  activate :external_pipeline,
+    name: :frontend_docs,
+    command: "mkdir -p .tmp && cd .tmp && rm -rf frontend && git clone --depth 1 #{config[:frontend_repo_url]} frontend && cd frontend && npm install && npm install typedoc && typedoc --name 'The Cloud Stove Front End' --out doc/frontend src/",
+    source: ".tmp/frontend/doc",
+    latency: 2
 end
