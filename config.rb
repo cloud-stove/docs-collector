@@ -41,4 +41,14 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+
+  config[:backend_repo_url] = "git@github.com:inz/cloud-stove.git"
+  config[:frontend_repo_url] = "git@github.com:inz/cloud-stove-ui.git"
+
+  # Pull in backend docs
+  activate :external_pipeline,
+    name: :backend_docs,
+    command: "mkdir -p .tmp && cd .tmp && rm -rf backend && git clone --depth 1 #{config[:backend_repo_url]} backend && cd backend && yard --output-dir doc/backend",
+    source: ".tmp/backend/doc",
+    latency: 2
 end

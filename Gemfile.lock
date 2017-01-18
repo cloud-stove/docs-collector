@@ -116,6 +116,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    yard (0.9.8)
 
 PLATFORMS
   ruby
@@ -126,6 +127,7 @@ DEPENDENCIES
   middleman-livereload
   tzinfo-data
   wdm (~> 0.1.0)
+  yard
 
 BUNDLED WITH
    1.12.3
