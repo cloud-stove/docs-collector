@@ -56,7 +56,7 @@ configure :build do
   # Pull in front end docs
   activate :external_pipeline,
     name: :frontend_docs,
-    command: "mkdir -p .tmp && cd .tmp && rm -rf frontend && git clone --depth 1 #{config[:frontend_repo_url]} frontend && cd frontend && npm install && npm install -g compodoc && compodoc --tsconfig tsconfig.json --name 'The Cloud Stove Front End' --output doc/frontend",
+    command: "mkdir -p .tmp && cd .tmp && rm -rf frontend && git clone --depth 1 #{config[:frontend_repo_url]} frontend && cd frontend && npm install -g compodoc && compodoc --tsconfig tsconfig.json --name 'The Cloud Stove Front End' --output doc/frontend/ --base /frontend/",
     source: ".tmp/frontend/doc",
     latency: 2
 end
