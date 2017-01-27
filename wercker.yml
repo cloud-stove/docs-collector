@@ -32,4 +32,7 @@ build:
             code: bundle exec middleman build
         - script:
             name: deploy site
-            code: bundle exec middleman deploy
+            code: |
+              git config user.email "cloudstove-bot"
+              git config user.name "cloudstove-bot"
+              bundle exec middleman deploy
