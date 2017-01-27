@@ -21,8 +21,11 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
-        - install-packages:
-            packages: nodejs
+        - script:
+            name: Install NodeJS
+            code: |
+                curl -sL https://deb.nodesource.com/setup_7.x | bash -
+                sudo apt-get install -y nodejs
         - bundle-install
         - script:
             name: build site
