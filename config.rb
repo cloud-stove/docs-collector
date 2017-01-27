@@ -35,6 +35,15 @@ end
 #   end
 # end
 
+config[:docs_repo_url] = "https://$GITHUB_TOKEN:x-oauth-basic@github.com/cloud-stove/docs-collector.git"
+config[:backend_repo_url] = "git@github.com:inz/cloud-stove.git"
+config[:frontend_repo_url] = "git@github.com:inz/cloud-stove-ui.git"
+
+if ENV['CI'] == 'true'
+  config[:backend_repo_url] = "https://$GITHUB_TOKEN:x-oauth-basic@github.com/inz/cloud-stove.git"
+  config[:frontend_repo_url] = "https://$GITHUB_TOKEN:x-oauth-basic@github.com/inz/cloud-stove-ui.git"
+end
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
@@ -42,14 +51,6 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
-
-  config[:backend_repo_url] = "git@github.com:inz/cloud-stove.git"
-  config[:frontend_repo_url] = "git@github.com:inz/cloud-stove-ui.git"
-
-  if ENV['CI'] == 'true'
-    config[:backend_repo_url] = "https://$GITHUB_TOKEN:x-oauth-basic@github.com/inz/cloud-stove.git"
-    config[:frontend_repo_url] = "https://$GITHUB_TOKEN:x-oauth-basic@github.com/inz/cloud-stove-ui.git"
-  end
 
   def fetch_code_command(directory_name, repo_url)
     if ENV['CI'] == 'true'
@@ -76,4 +77,7 @@ end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
+  if ENV['CI'] == 'true'
+    deploy.remote = config[:docs_repo_url]
+  end
 end
