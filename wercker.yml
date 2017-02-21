@@ -28,6 +28,10 @@ build:
                 sudo apt-get install -y nodejs
         - bundle-install
         - script:
+            name: Install dependencies
+            code: |
+              gem install redcarpet
+        - script:
             name: build site
             code: bundle exec middleman build
         - script:

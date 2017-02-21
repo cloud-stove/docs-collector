@@ -16,3 +16,4 @@ gem 'middleman-deploy', '~> 2.0.0.pre.alpha', git: 'https://github.com/inz/middl
 
 # To generate backend docs
 gem 'yard'
+gem 'redcarpet'
