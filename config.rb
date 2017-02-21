@@ -70,7 +70,7 @@ configure :build do
   # Pull in front end docs
   activate :external_pipeline,
     name: :frontend_docs,
-    command: "mkdir -p .tmp && cd .tmp && rm -rf frontend && #{fetch_code_command(:frontend, config[:frontend_repo_url])} && npm install --ignore-scripts && npm run typedoc -- --out doc/frontend/",
+    command: "mkdir -p .tmp && cd .tmp && rm -rf frontend && #{fetch_code_command(:frontend, config[:frontend_repo_url])} && sed -i -e 's/~0.5.5/0.5.5/g' package.json && npm install --ignore-scripts && npm run typedoc -- --out doc/frontend/",
     source: ".tmp/frontend/doc",
     latency: 2
 end
