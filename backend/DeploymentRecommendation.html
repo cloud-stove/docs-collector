@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: DeploymentRecommendation
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "DeploymentRecommendation";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">DeploymentRecommendation</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: DeploymentRecommendation
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Base.html" title="Base (class)">Base</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="Base.html" title="Base (class)">Base</a></span></li>
+          
+            <li class="next">DeploymentRecommendation</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app/models/deployment_recommendation.rb</dd>
+  </dl>
+  
+</div>
+
+
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="DEFAULT_MIN_RAM-constant" class="">DEFAULT_MIN_RAM =
+        <div class="docstring">
+  <div class="discussion">
+    <p>Constraint defaults</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='int'>1</span></pre></dd>
+    
+      <dt id="DEFAULT_MIN_CPUS-constant" class="">DEFAULT_MIN_CPUS =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>1</span></pre></dd>
+    
+      <dt id="DEFAULT_DEPENDENCY_WEIGHT-constant" class="">DEFAULT_DEPENDENCY_WEIGHT =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>100</span></pre></dd>
+    
+      <dt id="DEFAULT_REGION_AREAS-constant" class="">DEFAULT_REGION_AREAS =
+        
+      </dt>
+      <dd><pre class="code"><span class='qwords_beg'>%w(</span><span class='tstring_content'>EU</span><span class='words_sep'>)</span></pre></dd>
+    
+      <dt id="DEFAULT_MAX_NUM_INSTANCES-constant" class="">DEFAULT_MAX_NUM_INSTANCES =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>0</span></pre></dd>
+    
+      <dt id="INTRA_REGION_TRANSFER-constant" class="">INTRA_REGION_TRANSFER =
+        <div class="docstring">
+  <div class="discussion">
+    <p>Transfer costs (assumed)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='int'>0</span></pre></dd>
+    
+      <dt id="INTER_REGION_SAME_PROVIDER_TRANSFER-constant" class="">INTER_REGION_SAME_PROVIDER_TRANSFER =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>10</span></pre></dd>
+    
+      <dt id="INTER_REGION_DIFFERENT_PROVIDER_TRANSFER-constant" class="">INTER_REGION_DIFFERENT_PROVIDER_TRANSFER =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>30</span></pre></dd>
+    
+      <dt id="INTER_REGION_AREA_TRANSFER-constant" class="">INTER_REGION_AREA_TRANSFER =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>100</span></pre></dd>
+    
+      <dt id="SOLN_SEP-constant" class="">SOLN_SEP =
+        <div class="docstring">
+  <div class="discussion">
+    <p>MiniZinc</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>----------</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="SEARCH_COMPLETE_MSG-constant" class="">SEARCH_COMPLETE_MSG =
+        <div class="docstring">
+  <div class="discussion">
+    <p>&#39;--soln-sep&#39;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>==========</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="UNSATISFIABLE_MSG-constant" class="">UNSATISFIABLE_MSG =
+        <div class="docstring">
+  <div class="discussion">
+    <p>&#39;--search-complete-msg&#39;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>=====UNSATISFIABLE=====</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="UNCONSTRUCTED-constant" class="">UNCONSTRUCTED =
+        <div class="docstring">
+  <div class="discussion">
+    <p>Intermediate status</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unconstructed</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="UNEVALUATED-constant" class="">UNEVALUATED =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unevaluated</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="EVALUATING-constant" class="">EVALUATING =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>evaluating</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="UNSATISFIABLE-constant" class="">UNSATISFIABLE =
+        <div class="docstring">
+  <div class="discussion">
+    <p>Final status</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unsatisfiable</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="SATISFIABLE-constant" class="">SATISFIABLE =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>satisfiable</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="EVALUATION_ERROR-constant" class="">EVALUATION_ERROR =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>evaluation_error</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+    
+      <dt id="MINIZINC_ERROR_REGEX-constant" class="">MINIZINC_ERROR_REGEX =
+        
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>lib\/.+\.mzn:(\d+):</span><span class='regexp_end'>/</span></span></pre></dd>
+    
+  </dl>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#as_json-instance_method" title="#as_json (instance method)">#<strong>as_json</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#construct-instance_method" title="#construct (instance method)">#<strong>construct</strong>(provider)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Constructs the variable resource and ingredient data for the MiniZinc model for a given <code>provider</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#constructed%3F-instance_method" title="#constructed? (instance method)">#<strong>constructed?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#embed_ingredients-instance_method" title="#embed_ingredients (instance method)">#<strong>embed_ingredients</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evaluate-instance_method" title="#evaluate (instance method)">#<strong>evaluate</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Evaluates the MiniZinc model using the constructed resources and ingredient data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evaluated%3F-instance_method" title="#evaluated? (instance method)">#<strong>evaluated?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#extract_params-instance_method" title="#extract_params (instance method)">#<strong>extract_params</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extract_result-instance_method" title="#extract_result (instance method)">#<strong>extract_result</strong>(output)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filtered_resources-instance_method" title="#filtered_resources (instance method)">#<strong>filtered_resources</strong>(provider_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_ingredients_data-instance_method" title="#generate_ingredients_data (instance method)">#<strong>generate_ingredients_data</strong>(provider_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_resources_data-instance_method" title="#generate_resources_data (instance method)">#<strong>generate_resources_data</strong>(provider_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ingredient_resource_mapping-instance_method" title="#ingredient_resource_mapping (instance method)">#<strong>ingredient_resource_mapping</strong>(ingredient_resources)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Transforms the ordered resource code strings for ingredients into a mappings hash: [ingredient id] =&gt; [resource code] Example: ingredient_resource_mapping([&quot;79526981&quot;, &quot;79526981&quot;, &quot;4044876983&quot;]) 4=&gt;79526981, 5=&gt;4044876983.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inter_ingredient_traffic-instance_method" title="#inter_ingredient_traffic (instance method)">#<strong>inter_ingredient_traffic</strong>(all_leafs)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#line_from_minizinc_model-instance_method" title="#line_from_minizinc_model (instance method)">#<strong>line_from_minizinc_model</strong>(line)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#line_with_error-instance_method" title="#line_with_error (instance method)">#<strong>line_with_error</strong>(stderr)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#minizinc_model-instance_method" title="#minizinc_model (instance method)">#<strong>minizinc_model</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_result-instance_method" title="#parse_result (instance method)">#<strong>parse_result</strong>(stdout, stderr)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#preferred_regions-instance_method" title="#preferred_regions (instance method)">#<strong>preferred_regions</strong>(ingredient, provider_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns a flattened Boolean matrix (i.e., as array of [true|false]) determining which resources are allowed for which ingredients following the preferred region constraint.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#satisfiable%3F-instance_method" title="#satisfiable? (instance method)">#<strong>satisfiable?</strong>(result)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#schedule_evaluation-instance_method" title="#schedule_evaluation (instance method)">#<strong>schedule_evaluation</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Schedules the MiniZinc evaluation and keeps track of the scheduled job ID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transfer_costs-instance_method" title="#transfer_costs (instance method)">#<strong>transfer_costs</strong>(resources)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>NOTICE: Currently, these transfer costs are only a heuristic and do not reflect actual transfer cost from real cloud providers.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Base.html" title="Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Base.html#ma_accessor-class_method" title="Base.ma_accessor (method)">ma_accessor</a></span>, <span class='object_link'><a href="Base.html#ma_reader-class_method" title="Base.ma_reader (method)">ma_reader</a></span>, <span class='object_link'><a href="Base.html#ma_writer-class_method" title="Base.ma_writer (method)">ma_writer</a></span>, <span class='object_link'><a href="Base.html#serialize_more_attributes-instance_method" title="Base#serialize_more_attributes (method)">#serialize_more_attributes</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="as_json-instance_method">
+  
+    #<strong>as_json</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 280</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_params'>extract_params</span>
+
+  <span class='id identifier rubyid_ingredients'>ingredients</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:recommendation</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ingredient_id'>ingredient_id</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_code'>resource_code</span><span class='op'>|</span>
+    <span class='id identifier rubyid_entry'>entry</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_entry'>entry</span><span class='lbracket'>[</span><span class='symbol'>:ingredient</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Ingredient.html" title="Ingredient (class)">Ingredient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_ingredient_id'>ingredient_id</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='label'>skip_children:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>skip_constraints:</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entry'>entry</span><span class='lbracket'>[</span><span class='symbol'>:resource</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Resource.html" title="Resource (class)">Resource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by_resource_code'>find_by_resource_code</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_code'>resource_code</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='label'>skip_children:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>skip_constraints:</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entry'>entry</span><span class='lbracket'>[</span><span class='symbol'>:resource_count</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>num_resources</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_ingredients'>ingredients</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='rbracket'>]</span> <span class='kw'>rescue</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_ingredients'>ingredients</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_entry'>entry</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:recommendation</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredients'>ingredients</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:num_simultaneous_users</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_num_simultaneous_users'>num_simultaneous_users</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:application</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='label'>skip_children:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>skip_constraints:</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:unsatisfiable_message</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unsatisfiable_message</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#UNSATISFIABLE-constant" title="DeploymentRecommendation::UNSATISFIABLE (constant)">UNSATISFIABLE</a></span></span>
+  <span class='id identifier rubyid_hash'>hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="construct-instance_method">
+  
+    #<strong>construct</strong>(provider)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Constructs the variable resource and ingredient data for the MiniZinc model for a given <code>provider</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_construct'>construct</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_resources_data'>generate_resources_data</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_ingredients_data'>generate_ingredients_data</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="DeploymentRecommendation (class)">DeploymentRecommendation</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#UNEVALUATED-constant" title="DeploymentRecommendation::UNEVALUATED (constant)">UNEVALUATED</a></span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="constructed?-instance_method">
+  
+    #<strong>constructed?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+272
+273
+274</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 272</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_constructed?'>constructed?</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>!=</span> <span class='const'><span class='object_link'><a href="#UNCONSTRUCTED-constant" title="DeploymentRecommendation::UNCONSTRUCTED (constant)">UNCONSTRUCTED</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="embed_ingredients-instance_method">
+  
+    #<strong>embed_ingredients</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 300</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_embed_ingredients'>embed_ingredients</span>
+  <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_params'>extract_params</span>
+
+  <span class='id identifier rubyid_ingredients'>ingredients</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:recommendation</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ingredient_id'>ingredient_id</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_code'>resource_code</span><span class='op'>|</span>
+    <span class='id identifier rubyid_entry'>entry</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_entry'>entry</span><span class='lbracket'>[</span><span class='symbol'>:ingredient</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Ingredient.html" title="Ingredient (class)">Ingredient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_ingredient_id'>ingredient_id</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entry'>entry</span><span class='lbracket'>[</span><span class='symbol'>:resource</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Resource.html" title="Resource (class)">Resource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by_resource_code'>find_by_resource_code</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_code'>resource_code</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_ingredients'>ingredients</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_entry'>entry</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:recommendation</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredients'>ingredients</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:num_simultaneous_users</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_num_simultaneous_users'>num_simultaneous_users</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:unsatisfiable_message</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>unsatisfiable_message</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#UNSATISFIABLE-constant" title="DeploymentRecommendation::UNSATISFIABLE (constant)">UNSATISFIABLE</a></span></span>
+  <span class='id identifier rubyid_hash'>hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="evaluate-instance_method">
+  
+    #<strong>evaluate</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Evaluates the MiniZinc model using the constructed resources and ingredient data</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evaluate'>evaluate</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#EVALUATING-constant" title="DeploymentRecommendation::EVALUATING (constant)">EVALUATING</a></span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_resources'>resources</span> <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='qwords_beg'>%w(</span><span class='tstring_content'>resources</span><span class='words_sep'> </span><span class='tstring_content'>.dzn</span><span class='words_sep'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_resources_data'>resources_data</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+  <span class='id identifier rubyid_ingredients'>ingredients</span> <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='qwords_beg'>%w(</span><span class='tstring_content'>ingredients</span><span class='words_sep'> </span><span class='tstring_content'>.dzn</span><span class='words_sep'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ingredients'>ingredients</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredients_data'>ingredients_data</span>
+  <span class='id identifier rubyid_ingredients'>ingredients</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+
+  <span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minizinc -G or-tools -f fzn-or-tools </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_minizinc_model'>minizinc_model</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ingredients'>ingredients</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_stdout'>stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_stderr'>stderr</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Open3</span><span class='period'>.</span><span class='id identifier rubyid_capture3'>capture3</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_success?'>success?</span>
+    <span class='id identifier rubyid_parse_result'>parse_result</span><span class='lparen'>(</span><span class='id identifier rubyid_stdout'>stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_stderr'>stderr</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_fail'>fail</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Error executing MiniZinc!</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>----------stdout----------</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+           <span class='id identifier rubyid_stdout'>stdout</span><span class='comma'>,</span>
+           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>----------stderr----------</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+           <span class='id identifier rubyid_stderr'>stderr</span><span class='comma'>,</span>
+           <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--------------------------</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#EVALUATION_ERROR-constant" title="DeploymentRecommendation::EVALUATION_ERROR (constant)">EVALUATION_ERROR</a></span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+<span class='kw'>ensure</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_unlink'>unlink</span>
+  <span class='id identifier rubyid_ingredients'>ingredients</span><span class='period'>.</span><span class='id identifier rubyid_unlink'>unlink</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="evaluated?-instance_method">
+  
+    #<strong>evaluated?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+276
+277
+278</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 276</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evaluated?'>evaluated?</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#SATISFIABLE-constant" title="DeploymentRecommendation::SATISFIABLE (constant)">SATISFIABLE</a></span></span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#UNSATISFIABLE-constant" title="DeploymentRecommendation::UNSATISFIABLE (constant)">UNSATISFIABLE</a></span></span> <span class='op'>||</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#EVALUATION_ERROR-constant" title="DeploymentRecommendation::EVALUATION_ERROR (constant)">EVALUATION_ERROR</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_params-instance_method">
+  
+    #<strong>extract_params</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 320</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_params'>extract_params</span>
+  <span class='id identifier rubyid_hash'>hash</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:vm_cost</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vm_cost</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:total_cost</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>total_cost</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:recommendation</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ingredients</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ingredients</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:created_at</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span>
+  <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:updated_at</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_updated_at'>updated_at</span>
+  <span class='id identifier rubyid_hash'>hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_result-instance_method">
+  
+    #<strong>extract_result</strong>(output)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+127
+128
+129
+130
+131</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 127</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_result'>extract_result</span><span class='lparen'>(</span><span class='id identifier rubyid_output'>output</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_output'>output</span><span class='period'>.</span><span class='id identifier rubyid_gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, ]</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>]</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='id identifier rubyid_output'>output</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#SOLN_SEP-constant" title="DeploymentRecommendation::SOLN_SEP (constant)">SOLN_SEP</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_results'>results</span><span class='lbracket'>[</span><span class='id identifier rubyid_results'>results</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>-</span> <span class='int'>2</span><span class='rbracket'>]</span> <span class='comment'># last entry contains the search complete msg
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="filtered_resources-instance_method">
+  
+    #<strong>filtered_resources</strong>(provider_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+176
+177
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 176</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_filtered_resources'>filtered_resources</span><span class='lparen'>(</span><span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resources'>resources</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Resource.html" title="Resource (class)">Resource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_compute'>compute</span>
+  <span class='id identifier rubyid_resources'>resources</span> <span class='op'>=</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>provider_id:</span> <span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_provider_id'>provider_id</span>
+  <span class='id identifier rubyid_resources'>resources</span> <span class='op'>=</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_region_area'>region_area</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_preferred_region_areas'>preferred_region_areas</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_ingredients_data-instance_method">
+  
+    #<strong>generate_ingredients_data</strong>(provider_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 201</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_ingredients_data'>generate_ingredients_data</span><span class='lparen'>(</span><span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_all_leafs'>all_leafs</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_all_leafs'>all_leafs</span>
+  <span class='id identifier rubyid_num_ingredients'>num_ingredients</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>num_ingredients = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_num_ingredients'>num_ingredients</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inter_ingredient_traffic = array2d(Ingredients, Ingredients,
+                        </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_inter_ingredient_traffic'>inter_ingredient_traffic</span><span class='lparen'>(</span><span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>);</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_min_ram'>min_ram</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_ram_constraint'>ram_constraint</span><span class='period'>.</span><span class='id identifier rubyid_min_ram'>min_ram</span> <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="#DEFAULT_MIN_RAM-constant" title="DeploymentRecommendation::DEFAULT_MIN_RAM (constant)">DEFAULT_MIN_RAM</a></span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min_ram = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_min_ram'>min_ram</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_min_cpus'>min_cpus</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='int'>100</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_cpu_constraint'>cpu_constraint</span><span class='period'>.</span><span class='id identifier rubyid_min_cpus'>min_cpus</span> <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="#DEFAULT_MIN_CPUS-constant" title="DeploymentRecommendation::DEFAULT_MIN_CPUS (constant)">DEFAULT_MIN_CPUS</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min_cpus = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_min_cpus'>min_cpus</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>preferred_regions = array2d(Ingredients, Resources,
+                        </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_preferred_regions'>preferred_regions</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='comma'>,</span> <span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>);</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_max_num_resources'>max_num_resources</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_scaling_constraint'>scaling_constraint</span><span class='period'>.</span><span class='id identifier rubyid_max_num_instances'>max_num_instances</span> <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="#DEFAULT_MAX_NUM_INSTANCES-constant" title="DeploymentRecommendation::DEFAULT_MAX_NUM_INSTANCES (constant)">DEFAULT_MAX_NUM_INSTANCES</a></span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>max_num_resources = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_max_num_resources'>max_num_resources</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredients_data'>ingredients_data</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredients_data'>ingredients_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_resources_data-instance_method">
+  
+    #<strong>generate_resources_data</strong>(provider_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_resources_data'>generate_resources_data</span><span class='lparen'>(</span><span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resources'>resources</span> <span class='op'>=</span> <span class='id identifier rubyid_filtered_resources'>filtered_resources</span><span class='lparen'>(</span><span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>num_resources = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>resources = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:resource_code</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>regions = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:region_code</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_prices'>prices</span> <span class='op'>=</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_price_per_month'>price_per_month</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>costs = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_prices'>prices</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_ram_mb'>ram_mb</span> <span class='op'>=</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_ma'>ma</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mem_gb</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='int'>1024</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ram = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ram_mb'>ram_mb</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_cores'>cores</span> <span class='op'>=</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_ma'>ma</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cores</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='kw'>rescue</span> <span class='int'>0</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cpu = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cores'>cores</span><span class='embexpr_end'>}</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>transfer_costs = array2d(Resources, Resources, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_transfer_costs'>transfer_costs</span><span class='lparen'>(</span><span class='id identifier rubyid_resources'>resources</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='embexpr_end'>}</span><span class='tstring_content'>);</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_resources_data'>resources_data</span> <span class='op'>=</span> <span class='id identifier rubyid_resources_data'>resources_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ingredient_resource_mapping-instance_method">
+  
+    #<strong>ingredient_resource_mapping</strong>(ingredient_resources)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Transforms the ordered resource code strings for ingredients into a mappings hash:
+[ingredient id] =&gt; [resource code]
+Example: ingredient_resource_mapping([&quot;79526981&quot;, &quot;79526981&quot;, &quot;4044876983&quot;])
+4=&gt;79526981, 5=&gt;4044876983</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143
+144
+145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 141</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ingredient_resource_mapping'>ingredient_resource_mapping</span><span class='lparen'>(</span><span class='id identifier rubyid_ingredient_resources'>ingredient_resources</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ingredient_ids'>ingredient_ids</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resource_codes'>resource_codes</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredient_resources'>ingredient_resources</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_i</span><span class='rparen'>)</span>
+  <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_ingredient_ids'>ingredient_ids</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_codes'>resource_codes</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inter_ingredient_traffic-instance_method">
+  
+    #<strong>inter_ingredient_traffic</strong>(all_leafs)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inter_ingredient_traffic'>inter_ingredient_traffic</span><span class='lparen'>(</span><span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dependencies'>dependencies</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_dependency_constraints'>dependency_constraints</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_dc'>dc</span><span class='op'>|</span>
+      <span class='id identifier rubyid_source_index'>source_index</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_dc'>dc</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_target_index'>target_index</span> <span class='op'>=</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_dc'>dc</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span>
+      <span class='comment'># Use bi-directional dependency
+</span>      <span class='id identifier rubyid_dependencies'>dependencies</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_source_index'>source_index</span><span class='comma'>,</span><span class='id identifier rubyid_target_index'>target_index</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#DEFAULT_DEPENDENCY_WEIGHT-constant" title="DeploymentRecommendation::DEFAULT_DEPENDENCY_WEIGHT (constant)">DEFAULT_DEPENDENCY_WEIGHT</a></span></span>
+      <span class='id identifier rubyid_dependencies'>dependencies</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_target_index'>target_index</span><span class='comma'>,</span><span class='id identifier rubyid_source_index'>source_index</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#DEFAULT_DEPENDENCY_WEIGHT-constant" title="DeploymentRecommendation::DEFAULT_DEPENDENCY_WEIGHT (constant)">DEFAULT_DEPENDENCY_WEIGHT</a></span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='const'>Matrix</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='comma'>,</span> <span class='id identifier rubyid_all_leafs'>all_leafs</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_dependencies'>dependencies</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_dependencies'>dependencies</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='int'>0</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="line_from_minizinc_model-instance_method">
+  
+    #<strong>line_from_minizinc_model</strong>(line)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_line_from_minizinc_model'>line_from_minizinc_model</span><span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_readlines'>readlines</span><span class='lparen'>(</span><span class='id identifier rubyid_minizinc_model'>minizinc_model</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='id identifier rubyid_line'>line</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="line_with_error-instance_method">
+  
+    #<strong>line_with_error</strong>(stderr)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+123
+124
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 123</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_line_with_error'>line_with_error</span><span class='lparen'>(</span><span class='id identifier rubyid_stderr'>stderr</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="#MINIZINC_ERROR_REGEX-constant" title="DeploymentRecommendation::MINIZINC_ERROR_REGEX (constant)">MINIZINC_ERROR_REGEX</a></span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_stderr'>stderr</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="minizinc_model-instance_method">
+  
+    #<strong>minizinc_model</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_minizinc_model'>minizinc_model</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='embexpr_end'>}</span><span class='tstring_content'>/lib/horizontal-scaling.mzn</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_result-instance_method">
+  
+    #<strong>parse_result</strong>(stdout, stderr)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_result'>parse_result</span><span class='lparen'>(</span><span class='id identifier rubyid_stdout'>stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_stderr'>stderr</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_result'>extract_result</span><span class='lparen'>(</span><span class='id identifier rubyid_stdout'>stdout</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_satisfiable?'>satisfiable?</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#SATISFIABLE-constant" title="DeploymentRecommendation::SATISFIABLE (constant)">SATISFIABLE</a></span></span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span>
+    <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span> <span class='comment'># serializes `more_attributes` result string into a hash
+</span>      <span class='id identifier rubyid_err_msg'>err_msg</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_destroy!'>destroy!</span>
+      <span class='id identifier rubyid_fail'>fail</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Error parsing MiniZinc output!</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+             <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>----------result----------</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+             <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span>
+             <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>----------error----------</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+             <span class='id identifier rubyid_err_msg'>err_msg</span><span class='comma'>,</span>
+             <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>--------------------------</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_mapping'>mapping</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredient_resource_mapping'>ingredient_resource_mapping</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ingredients</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_more_attributes'>more_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ingredients</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_mapping'>mapping</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='kw'>else</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="#UNSATISFIABLE-constant" title="DeploymentRecommendation::UNSATISFIABLE (constant)">UNSATISFIABLE</a></span></span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="preferred_regions-instance_method">
+  
+    #<strong>preferred_regions</strong>(ingredient, provider_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a flattened Boolean matrix (i.e., as array of [true|false]) determining
+which resources are allowed for which ingredients following the
+preferred region constraint</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 261</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_preferred_regions'>preferred_regions</span><span class='lparen'>(</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='comma'>,</span> <span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resource_region_codes'>resource_region_codes</span> <span class='op'>=</span> <span class='id identifier rubyid_filtered_resources'>filtered_resources</span><span class='lparen'>(</span><span class='id identifier rubyid_provider_id'>provider_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:region_code</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_region_areas'>region_areas</span> <span class='op'>=</span> <span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_region_constraints'>region_constraints</span>
+  <span class='id identifier rubyid_regions'>regions</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_region_areas'>region_areas</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_region_area'>region_area</span><span class='op'>|</span>
+    <span class='id identifier rubyid_preferred_region_codes'>preferred_region_codes</span> <span class='op'>=</span> <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Resource.html" title="Resource (class)">Resource</a></span></span><span class='period'>.</span><span class='id identifier rubyid_region_codes'><span class='object_link'><a href="Resource.html#region_codes-class_method" title="Resource.region_codes (method)">region_codes</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_region_area'>region_area</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_regions'>regions</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_region_codes'>resource_region_codes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_rrc'>rrc</span><span class='op'>|</span> <span class='id identifier rubyid_preferred_region_codes'>preferred_region_codes</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_rrc'>rrc</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_regions'>regions</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="satisfiable?-instance_method">
+  
+    #<strong>satisfiable?</strong>(result)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_satisfiable?'>satisfiable?</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+  <span class='op'>!</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#UNSATISFIABLE_MSG-constant" title="DeploymentRecommendation::UNSATISFIABLE_MSG (constant)">UNSATISFIABLE_MSG</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="schedule_evaluation-instance_method">
+  
+    #<strong>schedule_evaluation</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Schedules the MiniZinc evaluation and keeps track of the scheduled job ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_schedule_evaluation'>schedule_evaluation</span>
+  <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_job'>job</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="EvaluateRecommendationJob.html" title="EvaluateRecommendationJob (class)">EvaluateRecommendationJob</a></span></span><span class='period'>.</span><span class='id identifier rubyid_perform_later'>perform_later</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ingredient'>ingredient</span><span class='period'>.</span><span class='id identifier rubyid_add_job'>add_job</span><span class='lparen'>(</span><span class='id identifier rubyid_job'>job</span><span class='period'>.</span><span class='id identifier rubyid_job_id'>job_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_job'>job</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transfer_costs-instance_method">
+  
+    #<strong>transfer_costs</strong>(resources)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>NOTICE: Currently, these transfer costs are only a heuristic and
+do not reflect actual transfer cost from real cloud providers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/deployment_recommendation.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_transfer_costs'>transfer_costs</span><span class='lparen'>(</span><span class='id identifier rubyid_resources'>resources</span><span class='rparen'>)</span>
+  <span class='const'>Matrix</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='comma'>,</span> <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_region_code'>region_code</span> <span class='op'>==</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_region_code'>region_code</span>
+      <span class='const'><span class='object_link'><a href="#INTRA_REGION_TRANSFER-constant" title="DeploymentRecommendation::INTRA_REGION_TRANSFER (constant)">INTRA_REGION_TRANSFER</a></span></span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_region_area'>region_area</span> <span class='op'>==</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_region_area'>region_area</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_provider_id'>provider_id</span> <span class='op'>==</span> <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_provider_id'>provider_id</span>
+        <span class='const'><span class='object_link'><a href="#INTER_REGION_SAME_PROVIDER_TRANSFER-constant" title="DeploymentRecommendation::INTER_REGION_SAME_PROVIDER_TRANSFER (constant)">INTER_REGION_SAME_PROVIDER_TRANSFER</a></span></span>
+      <span class='kw'>else</span>
+        <span class='const'><span class='object_link'><a href="#INTER_REGION_DIFFERENT_PROVIDER_TRANSFER-constant" title="DeploymentRecommendation::INTER_REGION_DIFFERENT_PROVIDER_TRANSFER (constant)">INTER_REGION_DIFFERENT_PROVIDER_TRANSFER</a></span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='const'><span class='object_link'><a href="#INTER_REGION_AREA_TRANSFER-constant" title="DeploymentRecommendation::INTER_REGION_AREA_TRANSFER (constant)">INTER_REGION_AREA_TRANSFER</a></span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Mar  2 15:02:22 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.3.3).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,919 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>RecommendationComponent | The Cloud Stove Front End</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">The Cloud Stove Front End</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/recommendationsmodule.html">RecommendationsModule</a>
+				</li>
+				<li>
+					<a href="recommendationsmodule.recommendationcomponent.html">RecommendationComponent</a>
+				</li>
+			</ul>
+			<h1>Class RecommendationComponent</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">RecommendationComponent</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">OnInit</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="recommendationsmodule.recommendationcomponent.html#_constraintservice" class="tsd-kind-icon">_constraint<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="recommendationsmodule.recommendationcomponent.html#_ingredientservice" class="tsd-kind-icon">_ingredient<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="recommendationsmodule.recommendationcomponent.html#_recommendationservice" class="tsd-kind-icon">_recommendation<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="recommendationsmodule.recommendationcomponent.html#_route" class="tsd-kind-icon">_route</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#application" class="tsd-kind-icon">application</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#generatingrecommendation" class="tsd-kind-icon">generating<wbr>Recommendation</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#recommendations" class="tsd-kind-icon">recommendations</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#selectableproviders" class="tsd-kind-icon">selectable<wbr>Providers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#selectableregions" class="tsd-kind-icon">selectable<wbr>Regions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#selectedrecommendation" class="tsd-kind-icon">selected<wbr>Recommendation</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#changeregion" class="tsd-kind-icon">change<wbr>Region</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#deleterecommendations" class="tsd-kind-icon">delete<wbr>Recommendations</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#loadrecommendation" class="tsd-kind-icon">load<wbr>Recommendation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#removerecommendation" class="tsd-kind-icon">remove<wbr>Recommendation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#selectprovider" class="tsd-kind-icon">select<wbr>Provider</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#triggerrecommendation" class="tsd-kind-icon">trigger<wbr>Recommendation</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#providerconstraint" class="tsd-kind-icon">provider<wbr>Constraint</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#recommendationoptions" class="tsd-kind-icon">recommendation<wbr>Options</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#recommendationrange" class="tsd-kind-icon">recommendation<wbr>Range</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#regionconstraint" class="tsd-kind-icon">region<wbr>Constraint</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="recommendationsmodule.recommendationcomponent.html#status" class="tsd-kind-icon">status</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Recommendation<wbr>Component<span class="tsd-signature-symbol">(</span>_ingredientService<span class="tsd-signature-symbol">: </span><a href="apimodule.ingredientservice.html" class="tsd-signature-type">IngredientService</a>, _constraintService<span class="tsd-signature-symbol">: </span><a href="apimodule.constraintservice.html" class="tsd-signature-type">ConstraintService</a>, _recommendationService<span class="tsd-signature-symbol">: </span><a href="apimodule.recommendationservice.html" class="tsd-signature-type">RecommendationService</a>, _route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ActivatedRoute</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="recommendationsmodule.recommendationcomponent.html" class="tsd-signature-type">RecommendationComponent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:61</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_ingredientService: <a href="apimodule.ingredientservice.html" class="tsd-signature-type">IngredientService</a></h5>
+								</li>
+								<li>
+									<h5>_constraintService: <a href="apimodule.constraintservice.html" class="tsd-signature-type">ConstraintService</a></h5>
+								</li>
+								<li>
+									<h5>_recommendationService: <a href="apimodule.recommendationservice.html" class="tsd-signature-type">RecommendationService</a></h5>
+								</li>
+								<li>
+									<h5>_route: <span class="tsd-signature-type">ActivatedRoute</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="recommendationsmodule.recommendationcomponent.html" class="tsd-signature-type">RecommendationComponent</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_constraintservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _constraint<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">_constraint<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="apimodule.constraintservice.html" class="tsd-signature-type">ConstraintService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:65</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_ingredientservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _ingredient<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">_ingredient<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="apimodule.ingredientservice.html" class="tsd-signature-type">IngredientService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:64</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_recommendationservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _recommendation<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">_recommendation<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="apimodule.recommendationservice.html" class="tsd-signature-type">RecommendationService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:66</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_route" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _route</h3>
+					<div class="tsd-signature tsd-kind-icon">_route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ActivatedRoute</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:67</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="application" class="tsd-anchor"></a>
+					<h3>application</h3>
+					<div class="tsd-signature tsd-kind-icon">application<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apimodule.ingredient.html" class="tsd-signature-type">Ingredient</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:23</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="generatingrecommendation" class="tsd-anchor"></a>
+					<h3>generating<wbr>Recommendation</h3>
+					<div class="tsd-signature tsd-kind-icon">generating<wbr>Recommendation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:26</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="recommendations" class="tsd-anchor"></a>
+					<h3>recommendations</h3>
+					<div class="tsd-signature tsd-kind-icon">recommendations<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apimodule.recommendation.html" class="tsd-signature-type">Recommendation</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:25</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="selectableproviders" class="tsd-anchor"></a>
+					<h3>selectable<wbr>Providers</h3>
+					<div class="tsd-signature tsd-kind-icon">selectable<wbr>Providers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;Google&#x27;, &#x27;Microsoft Azure&#x27;, &#x27;Digital Ocean&#x27;, &#x27;Atlantic.net&#x27;, &#x27;Amazon&#x27;, &#x27;Rackspace&#x27;, &#x27;Joyent&#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:61</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>todo</dt>
+							<dd><p>providers are hardcoded currently, but there is an endpoint to fix this</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="selectableregions" class="tsd-anchor"></a>
+					<h3>selectable<wbr>Regions</h3>
+					<div class="tsd-signature tsd-kind-icon">selectable<wbr>Regions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{id: &#x27;US&#x27;, name: &#x27;United States&#x27;},{id: &#x27;EU&#x27;, name: &#x27;Europe&#x27;},{id: &#x27;ASIA&#x27;, name: &#x27;Asia-Pacific&#x27;},{id: &#x27;SA&#x27;, name: &#x27;South America&#x27;}]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:35</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>todo</dt>
+							<dd><p>regions are hardcoded currently, but there is an endpoint to fix this</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="selectedrecommendation" class="tsd-anchor"></a>
+					<h3>selected<wbr>Recommendation</h3>
+					<div class="tsd-signature tsd-kind-icon">selected<wbr>Recommendation<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apimodule.recommendation.html" class="tsd-signature-type">Recommendation</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:24</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="changeregion" class="tsd-anchor"></a>
+					<h3>change<wbr>Region</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">change<wbr>Region<span class="tsd-signature-symbol">(</span>region<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:145</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>region: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleterecommendations" class="tsd-anchor"></a>
+					<h3>delete<wbr>Recommendations</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Recommendations<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:137</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes ALL recommendations</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="loadrecommendation" class="tsd-anchor"></a>
+					<h3>load<wbr>Recommendation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Recommendation<span class="tsd-signature-symbol">(</span>applicationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:78</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>applicationId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ngoninit" class="tsd-anchor"></a>
+					<h3>ng<wbr>OnInit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ng<wbr>OnInit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:71</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removerecommendation" class="tsd-anchor"></a>
+					<h3>remove<wbr>Recommendation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Recommendation<span class="tsd-signature-symbol">(</span>recommendation<span class="tsd-signature-symbol">: </span><a href="../interfaces/apimodule.recommendation.html" class="tsd-signature-type">Recommendation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:124</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes a single recommendation</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>recommendation: <a href="../interfaces/apimodule.recommendation.html" class="tsd-signature-type">Recommendation</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectprovider" class="tsd-anchor"></a>
+					<h3>select<wbr>Provider</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Provider<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:154</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>provider: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="triggerrecommendation" class="tsd-anchor"></a>
+					<h3>trigger<wbr>Recommendation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">trigger<wbr>Recommendation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:107</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Schedules recommendations for all in the range, giving a step size in the process.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="providerconstraint" class="tsd-anchor"></a>
+					<h3>provider<wbr>Constraint</h3>
+					<div class="tsd-signature tsd-kind-icon">provider<wbr>Constraint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:32</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="providerconstraint.preferred_providers" class="tsd-anchor"></a>
+						<h3>preferred_<wbr>providers</h3>
+						<div class="tsd-signature tsd-kind-icon">preferred_<wbr>providers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:32</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="providerconstraint.type" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ProviderConstraint&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:32</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="recommendationoptions" class="tsd-anchor"></a>
+					<h3>recommendation<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">recommendation<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:29</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="recommendationoptions.region" class="tsd-anchor"></a>
+						<h3>region</h3>
+						<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;EU&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:29</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="recommendationrange" class="tsd-anchor"></a>
+					<h3>recommendation<wbr>Range</h3>
+					<div class="tsd-signature tsd-kind-icon">recommendation<wbr>Range<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:43</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="recommendationrange.max" class="tsd-anchor"></a>
+						<h3>max</h3>
+						<div class="tsd-signature tsd-kind-icon">max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;50000</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:55</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="recommendationrange.min" class="tsd-anchor"></a>
+						<h3>min</h3>
+						<div class="tsd-signature tsd-kind-icon">min<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:54</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="recommendationrange.range" class="tsd-anchor"></a>
+						<h3>range</h3>
+						<div class="tsd-signature tsd-kind-icon">range<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[1000, 10000]</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:56</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="recommendationrange.step" class="tsd-anchor"></a>
+						<h3>step</h3>
+						<div class="tsd-signature tsd-kind-icon">step<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1000</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:57</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+						<a name="recommendationrange.config" class="tsd-anchor"></a>
+						<h3>config</h3>
+						<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:45</li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="recommendationrange.config.connect" class="tsd-anchor"></a>
+							<h3>connect</h3>
+							<div class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:46</li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+							<a name="recommendationrange.config.tooltips" class="tsd-anchor"></a>
+							<h3>tooltips</h3>
+							<div class="tsd-signature tsd-kind-icon">tooltips<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;[true, true]</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:47</li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
+							<a name="recommendationrange.config.pips" class="tsd-anchor"></a>
+							<h3>pips</h3>
+							<div class="tsd-signature tsd-kind-icon">pips<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in app/recommendations/recommendation.component.ts:48</li>
+								</ul>
+							</aside>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="recommendationrange.config.pips.density" class="tsd-anchor"></a>
+								<h3>density</h3>
+								<div class="tsd-signature tsd-kind-icon">density<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;5</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in app/recommendations/recommendation.component.ts:50</li>
+									</ul>
+								</aside>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="recommendationrange.config.pips.mode" class="tsd-anchor"></a>
+								<h3>mode</h3>
+								<div class="tsd-signature tsd-kind-icon">mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;range&quot;</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in app/recommendations/recommendation.component.ts:49</li>
+									</ul>
+								</aside>
+							</section>
+							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+								<a name="recommendationrange.config.pips.stepped" class="tsd-anchor"></a>
+								<h3>stepped</h3>
+								<div class="tsd-signature tsd-kind-icon">stepped<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in app/recommendations/recommendation.component.ts:51</li>
+									</ul>
+								</aside>
+							</section>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="regionconstraint" class="tsd-anchor"></a>
+					<h3>region<wbr>Constraint</h3>
+					<div class="tsd-signature tsd-kind-icon">region<wbr>Constraint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:31</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="regionconstraint.preferred_region_area" class="tsd-anchor"></a>
+						<h3>preferred_<wbr>region_<wbr>area</h3>
+						<div class="tsd-signature tsd-kind-icon">preferred_<wbr>region_<wbr>area<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:31</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="regionconstraint.type-1" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;PreferredRegionAreaConstraint&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:31</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in app/recommendations/recommendation.component.ts:28</li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="status.providerisopen" class="tsd-anchor"></a>
+						<h3>provider<wbr>IsOpen</h3>
+						<div class="tsd-signature tsd-kind-icon">provider<wbr>IsOpen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:28</li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="status.regionisopen" class="tsd-anchor"></a>
+						<h3>region<wbr>IsOpen</h3>
+						<div class="tsd-signature tsd-kind-icon">region<wbr>IsOpen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in app/recommendations/recommendation.component.ts:28</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>Modules</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_main_.html">"main"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_polyfills_.html">"polyfills"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_vendor_.html">"vendor"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/apimodule.html">Api<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/appmodule.html">App<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/applicationsmodule.html">Applications<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/authmodule.html">Auth<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/ingredientsmodule.html">Ingredients<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/pricingmodule.html">Pricing<wbr>Module</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/recommendationsmodule.html">Recommendations<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/sharedmodule.html">Shared<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/sidebarmodule.html">Sidebar<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/templatesmodule.html">Templates<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/welcomemodule.html">Welcome<wbr>Module</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationcomponent.html" class="tsd-kind-icon">Recommendation<wbr>Component</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="recommendationsmodule.recommendationcomponent.html#_constraintservice" class="tsd-kind-icon">_constraint<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="recommendationsmodule.recommendationcomponent.html#_ingredientservice" class="tsd-kind-icon">_ingredient<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="recommendationsmodule.recommendationcomponent.html#_recommendationservice" class="tsd-kind-icon">_recommendation<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="recommendationsmodule.recommendationcomponent.html#_route" class="tsd-kind-icon">_route</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#application" class="tsd-kind-icon">application</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#generatingrecommendation" class="tsd-kind-icon">generating<wbr>Recommendation</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#recommendations" class="tsd-kind-icon">recommendations</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#selectableproviders" class="tsd-kind-icon">selectable<wbr>Providers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#selectableregions" class="tsd-kind-icon">selectable<wbr>Regions</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#selectedrecommendation" class="tsd-kind-icon">selected<wbr>Recommendation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#changeregion" class="tsd-kind-icon">change<wbr>Region</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#deleterecommendations" class="tsd-kind-icon">delete<wbr>Recommendations</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#loadrecommendation" class="tsd-kind-icon">load<wbr>Recommendation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#removerecommendation" class="tsd-kind-icon">remove<wbr>Recommendation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#selectprovider" class="tsd-kind-icon">select<wbr>Provider</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#triggerrecommendation" class="tsd-kind-icon">trigger<wbr>Recommendation</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#providerconstraint" class="tsd-kind-icon">provider<wbr>Constraint</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#recommendationoptions" class="tsd-kind-icon">recommendation<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#recommendationrange" class="tsd-kind-icon">recommendation<wbr>Range</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#regionconstraint" class="tsd-kind-icon">region<wbr>Constraint</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="recommendationsmodule.recommendationcomponent.html#status" class="tsd-kind-icon">status</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationdetailcomponent.html" class="tsd-kind-icon">Recommendation<wbr>Detail<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationdistributionchartcomponent.html" class="tsd-kind-icon">Recommendation<wbr>Distribution<wbr>Chart<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationlistcomponent.html" class="tsd-kind-icon">Recommendation<wbr>List<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationsensitivitychartcomponent.html" class="tsd-kind-icon">Recommendation<wbr>Sensitivity<wbr>Chart<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.recommendationsmodule-1.html" class="tsd-kind-icon">Recommendations<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="recommendationsmodule.userworkloadslidercomponent.html" class="tsd-kind-icon">User<wbr>Workload<wbr>Slider<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/recommendationsmodule.html#chart" class="tsd-kind-icon">Chart</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/recommendationsmodule.html#routing" class="tsd-kind-icon">routing</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

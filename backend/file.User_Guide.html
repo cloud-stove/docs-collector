@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: User Guide
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "User_Guide";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: User Guide</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1>User Guide</h1>
+
+<p>The Cloud Stove gives users deployment recommendations for their cloud applications. Application instances are derived from generic blueprints and enriched with the specific characteristics and requirements of the application to be deployed. Blueprints are generic application scaffolds that represent different application architectures to capture relevant differences in overall deployment strategies. Deployment recommendations are created by optimizing the use of available provider offerings with respect to the captured application specifications and requirements.</p>
+
+<p>This user guide provides a brief overview of the current Cloud Stove features.</p>
+
+<h2>Applications</h2>
+
+<p>After signing in, you will see a list of all applications you have modeled in the Cloud Stove. </p>
+
+<p><img src="images/application-list.png" alt="application list"></p>
+
+<p>For new accounts, we create a sample Ruby on Rails application with Delayed Job for background workers and PostgreSQL as database backend.</p>
+
+<p><img src="images/sample-rails-app.png" alt="sample Rails app"></p>
+
+<h3>Predefined Application Templates</h3>
+
+<p>The Cloud Stove comes with some predefined application templates so users can quickly start to generate deployment recommendations for common scenarios. Currently, there are three n-tier Web app templates available at <a href="http://app.thestove.io/templates:">http://app.thestove.io/templates:</a></p>
+
+<ul>
+<li>Ruby on Rails application with PostgreSQL Backend</li>
+<li>Python Django application with PostgreSQL Backend</li>
+<li>NodeJS Application with MongoDB Backend</li>
+</ul>
+
+<p>These predefined applications include sensible default workload models. You can instantiate these applications to easily generate deployment recommendations for different scenarios.  </p>
+
+<h3>Custom Applications and Application Templates</h3>
+
+<p>Currently, you cannot create or modify templates using the AngularJS front end. Templates can, however, be changed directly on the Rails backend. In addition to the API, the backend has an HTML interface that allows you to directly modify applications, application templates, and their composition.</p>
+
+<p>You can sign in to the backend service at <a href="https://api.thestove.io">https://api.thestove.io</a> using your Cloud Stove account and see all <a href="https://api.thestove.io/applications">applications</a> that you have created, along with all available <a href="https://api.thestove.io/templates">templates</a>.</p>
+
+<h4>Customizing Applications</h4>
+
+<p>You can customize and configure various aspects of applications modeled with the Cloud Stove. <em>Note:</em> To preserve scenarios and recommendations generated so far, you should always create a copy of every application you want to modify.</p>
+
+<p><img src="images/backend-application-list.png" alt="backend application list"></p>
+
+<p>To create a copy of an existing application, find it in the <a href="https://api.thestove.io/applications">application list</a>, and click on the application name to navigate to the application overview. Here, you will find a helpfully labeled &#39;Copy&#39; button that will create a deep copy of the shown application, including all modeled components and dependencies. The copied application will have the same name as the original application plus a &quot;[v*n*]&quot; suffix.</p>
+
+<p>Hit &#39;Edit&#39; on the bottom of the screen to modify basic application information, such as name and description.</p>
+
+<p><img src="images/backend-edit-ingredient.png" alt="edit basic application information"></p>
+
+<h4>Adding Components to an Application</h4>
+
+<p>To add a component to an application, go to &#39;Ingredients&#39;, then &#39;New&#39; in the top navigation bar or visit the <a href="https://api.thestove.io/ingredients/new">new ingredient</a> form directly. Enter name and description for your new component and set &#39;Parent&#39; to the application the new component should be attached to.</p>
+
+<p><img src="images/backend-new-ingredient.png" alt="new ingredient form"></p>
+
+<p>Hit &#39;Save&#39; to store the new component.</p>
+
+<h4>Modifying Component Dependencies</h4>
+
+<p>On the application detail screen, you see an overview of currently active constraints for an application. This overview includes dependency constraints. Dependency constraints represent interactions between components of your application.</p>
+
+<p><img src="images/backend-constraints.png" alt="application constraints overview"></p>
+
+<p>As you see in the image above, the Rails app server interacts with the database master and slave components, and the worker only interacts with the database master. </p>
+
+<p>Suppose we want to model the interaction between the job worker and the database slave components. To add this interaction as a dependency constraint, click the &#39;Delayed Job Workers&#39; component to show the component detail screen. Then, hit &#39;Edit&#39; on the bottom of the page. On the edit form, you can see and modify all data stored about this component. Towards the bottom of the page, click the &#39;Add Dependency Constraint&#39; link.</p>
+
+<p><img src="images/backend-add-dependency.png" alt="add dependency constraint"></p>
+
+<p>Select the desired target component from the drop-down box and hit &#39;Save&#39;. You can now go back to the application overview by clicking &#39;Application Root&#39; at the bottom of the page to inspect the dependency constraint you just created. </p>
+
+<h4>Customizing Templates</h4>
+
+<p>Currently, regular users cannot modify templates. However, you can instantiate a template and modify the created application as described above.</p>
+
+<h2>Workload Modeling</h2>
+
+<p>In the application detail view, you can select components in the graphical overview at the top, and adjust workload parameters to suit your application in the form below. You can adjust several parameters, such as minimum CPU and RAM required to execute the component, expected number of users that can be served with minimum CPU and RAM, required memory for each additional user, as well as a <em>parallelism</em> factor that represents how much performance gain is expected for this component when increasing the number of available CPUs.</p>
+
+<p><img src="images/sample-rails-app-workload-model.png" alt="sample Rails workload model"></p>
+
+<h2>Deployment Recommendations</h2>
+
+<p>Go to the <em>Recommendations</em> view by either clicking the &#39;Recommendations&#39; button on the top right of the application detail view, or using the <img src="images/nav-recommendations.png" alt="recommendations"> link in the navigation panel on the left of the screen and selecting an application from the list.</p>
+
+<p>At the top of the recommendations view, you see a graph with an overview of all deployment recommendations generated so far:</p>
+
+<p><img src="images/recommendations-graph.png" alt="recommendations graph"></p>
+
+<p>The graph will be populated with a small number of recommendations for the generated sample application. Please note that if you modified any of the workload parameters in the previous step, you might not see any recommendations yet.</p>
+
+<p>Below the graph, you find the form to generate new recommendations.</p>
+
+<p><img src="images/recommendations-form.png" alt="new recommendations"></p>
+
+<p>Enter the desired number of users you want to generate deployment recommendations for and hit the &#39;Generate Recommendation&#39; button. After a couple of seconds, the new recommendations show up in the overview graph and the recommendations list.</p>
+
+<p><img src="images/recommendations-list.png" alt="recommendations list"></p>
+
+<p>If you click on a recommendation in the list, you see a detailed description of the generated deployment recommendation next to the recommendation list (or below, depending on your browser window size). Here you can easily identify cost drivers for your application deployment and get a feel for how much each component will cost in production.</p>
+
+<h2>Pricing Overview</h2>
+
+<p>The <a href="https://app.thestove.io/pricing">pricing overview</a> <img src="images/nav-pricing-overview.png" alt="pricing"> allows to filter and sort the compute resources. Use the dropdowns to filter by region and provider. Click on individual columns (e.g., <em>Memory (GB)</em>) to toggle sorting between ascending and descending.</p>
+
+<p><img src="images/pricing-overview.png" alt="pricing overview"></p>
+
+<h3>Updating Provider Data</h3>
+
+<p>Notice: Currently, provider data can only be updated in the backend by the admin user.</p>
+
+<p>Login in the <a href="http://api.thestove.io">backend</a> as <code>admin@thestove.io</code> and navigate to <a href="http://api.thestove.io/providers">/providers</a>. Use the <code>Update Provider Data</code> button to run all provider crawler and update their pricing information. Whenever you have updated the provider data, the admin user might hold outdated seeds. Therefore, you might want to hit the <code>Update Admin Recommendation Seeds</code> to regenerate these outdated recommendations. You can always check the status of these jobs under <a href="http://api.thestove.io/jobs">/jobs</a>.</p>
+
+<p><img src="images/backend-update-providers.png" alt="update providers"></p>
+</div></div>
+
+      <div id="footer">
+  Generated on Thu Mar  2 15:02:21 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.3.3).
+</div>
+
+    </div>
+  </body>
+</html>
